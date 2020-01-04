@@ -1,0 +1,45 @@
+@import "../../shared.scss";
+
+.headerContainer {
+    width: 100%;
+    height: 55px;
+    background: #FFF;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    align-items: center;
+    color: $primary;
+    font-weight: 600;
+}
+
+.headerImage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+        margin-right: 10px;
+        height: 30px;
+        width: 30px;
+        border-radius: 40px;
+    }
+
+}
+
+.caret {
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    cursor: pointer;
+
+    &:hover g {
+        fill: $primary;
+    }
+
+    g {
+        fill: $utility-gray;
+
+    }
+
+}
