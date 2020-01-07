@@ -192,3 +192,8 @@ body {
   background: $gray-base;
   min-height: 100vh;
 }
+
+.navigtaion a.active {
+  background: white;
+  color: $text-primary;
+}

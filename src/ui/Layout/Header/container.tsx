@@ -1,13 +1,10 @@
 import React from "react";
 import HeaderPresenter from "./presenter";
+import { useSelector } from "react-redux";
+import { authSelectors } from "../../../state/ducks/auth";
 
 const HeaderContainer = () => {
-  const user = {
-    id: "1",
-    username: "Roman Kutepov",
-    image:
-      "https://i1.wp.com/gentlehair.com/wp-content/uploads/2015/08/Untitled-design-1.png?fit=960%2C750&ssl=1",
-  };
+  const user = useSelector(authSelectors.currentUserDetails);
   return <HeaderPresenter user={user} />;
 };
 

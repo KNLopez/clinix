@@ -3,11 +3,15 @@ import { HeaderPresenterProps } from "../presenter";
 import styles from "../Header.module.scss";
 import { ReactComponent as Caret } from "./caret.svg";
 
-const HeaderRight: React.FC<HeaderPresenterProps> = ({ user }) => (
+export interface OwnProps extends HeaderPresenterProps {
+  logout: any;
+}
+
+const HeaderRight: React.FC<OwnProps> = ({ user, logout }) => (
   <div className={styles.headerImage}>
-    <img src={user.image} /> {user.username}{" "}
+    <img alt={user.name} src={user.photo} /> {user.name}{" "}
     <div className={styles.caret}>
-      <Caret />
+      <Caret onClick={logout} />
     </div>
   </div>
 );
