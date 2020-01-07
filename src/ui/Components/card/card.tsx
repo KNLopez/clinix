@@ -1,22 +1,27 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import styles from "./card.module.scss";
 
-export interface CardProps {
+export interface CardProps extends CSSProperties {
   children: any;
-  display?: string;
-  justifyContent?: string;
-  alignItems?: string;
 }
 
 const Card: React.FC<CardProps> = ({
   children,
   display = "block",
-  justifyContent = "inherit",
-  alignItems = "inherit",
-}) => (
-  <div style={{ display, justifyContent, alignItems }} className={styles.card}>
-    {children}
-  </div>
-);
+  backgroundColor = "#fff",
+  ...props
+}) => {
+  const style: CSSProperties = {
+    display,
+    backgroundColor,
+    ...props,
+  };
+
+  return (
+    <div style={style} className={styles.card}>
+      {children}
+    </div>
+  );
+};
 
 export default Card;

@@ -1,3 +1,5 @@
+@import "../shared.scss";
+
 .dashboard {
     padding: 3em;
 }
@@ -9,4 +11,17 @@
 .patientCards {
     display: grid;
     gap: 10px 0;
+}
+
+.stats {
+    .name {
+        color: $primary;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 4em;
+        margin: 0;
+    }
+
 }
